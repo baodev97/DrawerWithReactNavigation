@@ -1,11 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { RootDrawerParamList } from '@/App';
+import { DrawerScreenProps } from "@react-navigation/drawer";
+import { Button, StyleSheet, Text, View } from 'react-native';
 
-function UserScreen() {
+type UserScreenNavigationProp = DrawerScreenProps<RootDrawerParamList,'user'>
+
+function UserScreen({navigation}:UserScreenNavigationProp) {
+
+  function handleOpenDrawer (){
+    navigation.toggleDrawer()
+  }
   return (
     <View style={styles.rootContainer}>
       <Text>
         This is the <Text style={styles.highlight}>user</Text> screen!
       </Text>
+      <Button title='Open Drawer' onPress={handleOpenDrawer}/>
     </View>
   );
 }
