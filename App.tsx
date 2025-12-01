@@ -9,7 +9,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName='welcome'>
-        <Drawer.Screen name='welcome' component={WelcomeScreen}/>
+        <Drawer.Screen name='welcome' component={WelcomeScreen} options={{
+          drawerLabel:"Welcome Screen",
+          headerStyle:{backgroundColor:"#3050d0ff"},
+          headerTintColor:'#ffffff',
+          drawerActiveBackgroundColor:'#ccc',
+          drawerActiveTintColor:'#25398aff',
+          //drawerStyle:{backgroundColor:"#ccc"}
+        }}/>
         <Drawer.Screen name='user' component={UserScreen}/>
       </Drawer.Navigator>
     </NavigationContainer>
